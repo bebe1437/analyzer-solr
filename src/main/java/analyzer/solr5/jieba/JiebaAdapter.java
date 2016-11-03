@@ -8,6 +8,8 @@ import com.huaban.analysis.jieba.WordDictionary;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
 
@@ -33,8 +35,8 @@ public class JiebaAdapter implements Iterator<SegToken> {
 		if (null != userDictPath) {
 			try{
 				WordDictionary dictAdd = WordDictionary.getInstance();
-				File file = new File(userDictPath);
-				dictAdd.loadUserDict(file);
+                Path path = Paths.get(userDictPath);
+				dictAdd.loadUserDict(path);
 				System.out.println("load userDict: " + userDictPath + " succ!");
 			} catch (Exception e) {
 				e.printStackTrace();

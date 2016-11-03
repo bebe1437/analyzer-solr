@@ -1,11 +1,11 @@
 group = 'analyzer.solr5'
-version = '1.0'
+version = '1.1'
 apply plugin: 'java'
 apply plugin: "eclipse"
 apply plugin: "idea"
 
-sourceCompatibility = 1.5
-version = '1.0'
+sourceCompatibility = 1.7
+version = '1.1'
 
 repositories {
     mavenCentral()
@@ -17,7 +17,7 @@ dependencies {
     compile("org.apache.lucene:lucene-core:5.0.0")
     compile("org.apache.lucene:lucene-queryparser:5.0.0")
     compile("org.apache.lucene:lucene-analyzers-common:5.0.0")
-    compile('com.huaban:jieba-analysis:1.0.0')
+    compile('com.huaban:jieba-analysis:1.0.2')
 //    compile("org.fnlp:fnlp-core:2.0-SNAPSHOT")
     compile("edu.stanford.nlp:stanford-corenlp:3.5.1")
 }

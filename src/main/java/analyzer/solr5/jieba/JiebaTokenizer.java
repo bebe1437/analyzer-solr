@@ -14,7 +14,7 @@ public class JiebaTokenizer extends Tokenizer {
 
 	private CharTermAttribute termAtt;
 	private OffsetAttribute offsetAtt;
-	private TypeAttribute typeAtt;
+	//private TypeAttribute typeAtt;
 	private int endPosition;
 	
 	
@@ -24,7 +24,7 @@ public class JiebaTokenizer extends Tokenizer {
 		
 	    this.offsetAtt = addAttribute(OffsetAttribute.class);
 	    this.termAtt = addAttribute(CharTermAttribute.class);
-	    this.typeAtt = addAttribute(TypeAttribute.class);
+	    //this.typeAtt = addAttribute(TypeAttribute.class);
 	    
 	    jieba = new JiebaAdapter(input, segModeName, userDictPath);
 	    
@@ -35,11 +35,11 @@ public class JiebaTokenizer extends Tokenizer {
 		clearAttributes();
 		if(jieba.hasNext()){
 			SegToken token = jieba.next();
-			termAtt.append(token.word.getToken());
+			termAtt.append(token.word);
 			termAtt.setLength(token.word.length());
 			offsetAtt.setOffset(token.startOffset, token.endOffset);
 			endPosition = token.endOffset;
-			typeAtt.setType(token.word.getTokenType());			
+			//typeAtt.setType(token.word.getTokenType());
 			return true;
 		}
 		return false;

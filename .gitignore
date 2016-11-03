@@ -1,6 +1,7 @@
 # idea IDE
 out
 .idea
+.gradle
 *.iml
 *.ipr
 *.iws

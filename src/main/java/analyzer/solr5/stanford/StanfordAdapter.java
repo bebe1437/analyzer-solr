@@ -77,4 +77,9 @@ public class StanfordAdapter implements Iterator<String> {
 		return tokens.next();
 	}
 
+	@Override
+    public void remove(){
+        tokens.remove();
+    }
+
 }
